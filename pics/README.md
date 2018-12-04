@@ -42,3 +42,27 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Example solution for: "TypeError: Cannot read property 'state' of undefined"
+
+class Car {
+  constructor () {
+    this.drive = this.drive.bind(this);
+  }
+  
+  setDriveSound(sound) {
+    this.sound = sound;
+  }
+  
+  drive() {
+    return this.sound;
+  }
+}
+
+const car = new Car();
+car.setDriveSound('vroom');
+
+const drive = car.drive;
+
+drive()
